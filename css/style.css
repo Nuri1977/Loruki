@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
+:root {
+  --primary-color: #047aed;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -37,7 +41,7 @@ img {
 
 /* NAVBAR */
 .navbar {
-  background-color: #047aed;
+  background-color: var(--primary-color);
   color: #fff;
   height: 70px;
 }
@@ -60,6 +64,71 @@ img {
   justify-content: space-between;
 }
 
+/* SHOWCASE */
+.showcase {
+  height: 400px;
+  background: var(--primary-color);
+  color: #fff;
+  position: relative;
+}
+
+.showcase h1 {
+  font-size: 40px;
+}
+
+.showcase p {
+  margin: 20px 0;
+}
+
+.showcase .grid {
+  overflow: visible;
+  grid-template-columns: 3fr 2fr;
+  gap: 30px;
+}
+
+.showcase-form {
+  position: relative;
+  top: 60px;
+  height: 350px;
+  width: 400px;
+  padding: 40px;
+  z-index: 100;
+  justify-self: flex-end;
+}
+
+.showcase .form-control {
+  margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+  border: 0;
+  border-bottom: 1px solid #b4becb;
+  width: 100%;
+  padding: 3px;
+  font-size: 16px;
+}
+
+.showcase-form input:focus {
+  outline: none;
+}
+
+.showcase::before,
+.showcase::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* UTILITIES */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -67,8 +136,45 @@ img {
   padding: 0 40px;
 }
 
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  cursor: pointer;
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px #fff solid;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}
+
 .flex {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   justify-content: center;
   align-items: center;
   height: 100%;
