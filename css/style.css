@@ -146,3 +146,15 @@ img {
   font-size: 20px;
   font-weight: bold;
 }
+
+/* CLI */
+.cli .grid {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+.cli .grid > *:first-child {
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+}
+
